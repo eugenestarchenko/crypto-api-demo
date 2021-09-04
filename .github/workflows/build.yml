@@ -50,8 +50,4 @@ jobs:
     - name: Push the image
       if: github.ref == 'refs/heads/main'
       run: |
-<<<<<<< HEAD
         docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
-=======
-        docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPOSITORY/$CONTAINER_IMAGE
->>>>>>> de1f1da568f2a7fd9743c365277fbc335f257b32
