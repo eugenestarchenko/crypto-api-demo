@@ -43,7 +43,6 @@ jobs:
         docker build \
           -t $CONTAINER_IMAGE \
           -t $GITHUB_REPOSITORY:$GITHUB_SHA \
-          -t latest \
           -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE .
 
     # Only push to registry on main
