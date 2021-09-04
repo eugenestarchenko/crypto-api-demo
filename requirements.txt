@@ -1,0 +1,5 @@
+fastapi==0.63.0
+uvicorn==0.13.4
+requests==2.26.0
+pytest==6.2.5
+pytest-cov==2.12.1

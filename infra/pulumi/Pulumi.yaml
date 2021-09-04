@@ -1,0 +1,6 @@
+name: crypto-api-infra
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: eks
