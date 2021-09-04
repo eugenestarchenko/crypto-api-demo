@@ -4,6 +4,7 @@ on:
     branches:
       - main
 
+
 name: Build and Push to ECR
 
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html
@@ -13,7 +14,7 @@ env:
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  CONTAINER_IMAGE: crypto-api-demo:${{ github.sha }}
+  CONTAINER_IMAGE: crypto-api-demo-bfb7bf4:${{ github.sha }}
 
 jobs:
   build-and-push:
@@ -43,10 +44,10 @@ jobs:
           -t $CONTAINER_IMAGE \
           -t $GITHUB_REPOSITORY:$GITHUB_SHA \
           -t latest \
-          -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPOSITORY/$CONTAINER_IMAGE .
+          -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE .
 
     # Only push to registry on main
     - name: Push the image
       if: github.ref == 'refs/heads/main'
       run: |
-        docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPOSITORY/$CONTAINER_IMAGE
+        docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
