@@ -1,5 +1,5 @@
 on: push
-name: Helm Check 
+name: Helm Check
 jobs:
   helm-check:
     runs-on: ubuntu-latest
