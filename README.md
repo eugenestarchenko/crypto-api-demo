@@ -78,3 +78,9 @@ curl -X 'GET' \
   'http://k8s-default-cryptoap-e3b7b4884b-375603982.us-east-1.elb.amazonaws.com/v1/currency?ticker=CAD' \
   -H 'accept: application/json'
 ```
+
+## TODO (if have more time)
+
+- Extend unit tests
+- Include a `/metrics` ednpoint
+- Setup RBAC and Github Actions Helm action for deployment
