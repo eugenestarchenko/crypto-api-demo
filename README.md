@@ -81,6 +81,7 @@ curl -X 'GET' \
 
 ## TODO (if have more time)
 
-- Extend unit tests
-- Include a `/metrics` ednpoint
+- Extend unit tests / infra tests
+- Include a `/metrics` endpoint
 - Setup RBAC and Github Actions Helm action for deployment
+- Run self hosted GA runners for CI/CD on EKS
